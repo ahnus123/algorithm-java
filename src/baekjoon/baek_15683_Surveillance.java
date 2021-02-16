@@ -1,9 +1,9 @@
-package baekjun;
+package baekjoon;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class baek_15683_surveillance {
+public class baek_15683_Surveillance {
 	public static int answer = 100;
 
 	public static void main(String[] args) {

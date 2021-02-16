@@ -1,4 +1,4 @@
-package baekjun;
+package baekjoon;
 
 import java.util.Scanner;
 import javafx.util.Pair;

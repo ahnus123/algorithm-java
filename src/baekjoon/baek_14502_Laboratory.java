@@ -1,4 +1,4 @@
-package baekjun;
+package baekjoon;
 
 import java.util.HashMap;
 import java.util.LinkedList;
