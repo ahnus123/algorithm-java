@@ -20,19 +20,18 @@ public class programmers_70129_RepeatBinaryConversion {
         int zeroCnt = 0;
         int loopCnt = 0;
         
-        while(!s.equals("1")) {
-        	for(int i=0;i<s.length();i++) {		// 0 지우기
-        		if(s.charAt(i) == '0')
+        while ("1".equals(s) == false) {
+        	for (int i = 0; i < s.length(); i++) {		// 0 지우기
+        		if (s.charAt(i) == '0') {
         			zeroCnt++;
+        		}
         	}
     		s = s.replaceAll("0", "");
-        	//System.out.println(zeroCnt + " ==== " + s);
         	
         	int sLength = s.length();	// 0 제거한 문자열의 길이
-        	if(sLength > 1) {
+        	if (sLength > 1) {
 	        	//s = binaryConv(sLength);	// 수정된 문자열 길이를 2진법으로 표시 (직접 함수 구현)
         		s = Integer.toBinaryString(sLength);	// 수정된 문자열 길이를 2진법으로 표시(내장함수 toBinaryString())
-	        	//System.out.println(loopCnt + " -> " + s);
         	}
         	loopCnt++;
         }
@@ -45,24 +44,25 @@ public class programmers_70129_RepeatBinaryConversion {
     }
     
     public static String binaryConv(int sLength) {		// 10진법 -> 2진법
-    	String res = "";
+    	StringBuilder res = new StringBuilder("");
     	Stack<Integer> binary = new Stack<>();
     	
-    	if(sLength == 1)
+    	if (sLength == 1) {
     		return "1";
+    	}
     	
-    	while(sLength >= 2) {
+    	while (sLength >= 2) {
     		binary.add(sLength%2);
     		sLength /= 2;
     	}
     	binary.add(sLength);
     	
     	int size = binary.size();
-    	for(int i=0;i<size;i++) {
+    	for (int i = 0; i < size; i++) {
     		int n = binary.pop();
-    		res += String.valueOf(n);
+    		res.append(String.valueOf(n));
     	}
     	
-    	return res;
+    	return res.toString();
     }
 }

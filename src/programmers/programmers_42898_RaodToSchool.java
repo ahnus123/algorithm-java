@@ -13,10 +13,10 @@ public class programmers_42898_RaodToSchool {
         long[][] map = new long[n][m];
         
         for(int i=0;i<puddles.length;i++)		// 물 웅덩이
-        	map[puddles[i][0]-1][puddles[i][1]-1] = -1;
+        	map[puddles[i][1]-1][puddles[i][0]-1] = -1;
 
-        for(int i=1;i<m;i++) {		// 맨 윗줄, 맨 왼쪽줄1로 초기
-        	if(map[0][i] == -1)		// 단, 물웅덩이가 있으면 그다음은 0
+        for(int i=1;i<m;i++) {		// 留� �쐵以�, 留� �쇊履쎌쨪1濡� 珥덇린
+        	if(map[0][i] == -1)		// �떒, 臾쇱썒�뜦�씠媛� �엳�쑝硫� 洹몃떎�쓬�� 0
         		break;
         	map[0][i] = 1;
         }

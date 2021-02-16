@@ -1,4 +1,4 @@
-package baekjun;
+package baekjoon;
 
 import java.util.*;
 
@@ -10,24 +10,20 @@ public class baek_11052_BuyCards {
 		int[] prices = new int[n+1];
 		int[] maxPrices = new int[n+1];
 		
-		for(int i=1;i<=n;i++)		// input
+		for (int i = 1; i <= n; i++) {		// input
 			prices[i] = sc.nextInt();
-		
-		maxPrices[1] = prices[1];
-		for(int i=2;i<=n;i++) {
-			maxPrices[i] = prices[i];	// 카드 1장일 때
-			
-			for(int j=1;j<=i/2;j++) {
-//				System.out.println(i-j + " : " + maxPrices[i-j]);
-//				System.out.println(j + " : " + maxPrices[j]);
-//				System.out.println(maxPrices[i] + " ,  " + (maxPrices[i-j] + prices[j]) + "\n");
-				if(maxPrices[i] < maxPrices[i-j] + prices[j])	// 카드 i장일 때(카드 i-j장일 때 최대금액 + 카드 j장일 때 최대금액)
-					maxPrices[i] = maxPrices[i-j] + prices[j];
-			}
-//			System.out.println("=> " + maxPrices[i]);
 		}
 		
-//		for(int i=0;i<n;i++) {
+		maxPrices[1] = prices[1];
+		for (int i = 2; i <= n; i++) {
+			maxPrices[i] = prices[i];	// 카드팩 i장짜리 1개일 때
+			
+			for (int j = 1; j <= i / 2; j++) {
+				maxPrices[i]  = Math.max(maxPrices[i] , maxPrices[i-j] + prices[j]);	// 카드 i장일 때(카드 i-j장일 때 최대금액 + 카드 j장일 때 최대금액)
+			}
+		}
+		
+//		for (int i = 0; i < n; i++) {
 //			System.out.print(maxPrices[i] + "\t");
 //		}System.out.println();
 		
