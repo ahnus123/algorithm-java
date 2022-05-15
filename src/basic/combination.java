@@ -1,4 +1,4 @@
-package etc;
+package basic;
 
 public class combination {
 
@@ -12,7 +12,7 @@ public class combination {
 		
 		for (int i = 1; i < origin.length; i++) {
 			int[] arr = new int[i];
-			//recombination(origin, arr, origin.length, i, 0, 0);	// 중복조합 : nCr
+			//recombination(origin, arr, origin.length, i, 0, 0);	// 중복조합
 		}
 		
 		for (int i = 1; i < origin.length; i++) {
